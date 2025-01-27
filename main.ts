@@ -1,12 +1,18 @@
 import { MongoClient, ObjectId } from "npm:mongodb";
 
-/*
 
-const mongoUrl = Deno.env.get('mongoUrl')
+const mongoURL = Deno.env.get('mongoURL')
 
-if (!mongoUrl) {
+if (!mongoURL) {
   console.error('Url inválida');
+  throw new Error('Url inválida');
 }
+
+const client = new MongoClient(mongoURL);
+await client.connect();
+const db = await client.db('Nombre Base de Datos');
+
+//const xCollection = db.collection<>('nombreColeccion');kids
 
 const apiNinjaKey = Deno.env.get('apiNinjaKey')
 
@@ -14,13 +20,6 @@ if (!apiNinjaKey) {
   console.error('Api key inválida');
 }
 
-const client = new MongoClient(mongoUrl);
-await client.connect();
-const db = await client.db('Nombre Base de Datos');
-
-//const xCollection = db.collection<>('nombreColeccion');kids
-
- */
 
 const handler = async(req : Request):Promise<Response> =>{
 
