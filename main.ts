@@ -22,8 +22,24 @@ if (!apiNinjaKey) {
 
 
 const handler = async(req : Request):Promise<Response> =>{
+  const method = req.method
+  const url = new URL(req.url)
+  const path = url.pathname
 
-  return new Response('Endpoint no encontrado', { status: 404 });
+  if(method === "GET") {
+    //TODO
+  }
+  else if (method  === "POST"){
+    //TODO
+  }
+  else if (method === "PUT"){
+    //TODO
+  }
+  else if (method === "DELETE"){
+    //TODO
+  }
+
+  return new Response('Endpoint not found', { status: 404 });
 }
 
 
